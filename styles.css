@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.world-clock-app {
+background-color: #fff;
+max-width: 600px;
+height: auto;
+margin: 40px auto;
+padding: 20px;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.select-location-time {
+    padding: 10px;
+    width: 96%; 
+    font-size: 16px;
+}
+
+.col-1 {
+    margin: 20px 0;
+    padding: 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #ccc;
+}
+
+.col-1 h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+
+}
+.col-1 p {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.current-time {
+    font-size: 46px;
+    font-weight: 700;
+}
+footer {
+    font-size: 15px;
+    opacity: 0.7;
+    margin-top: 20px;
+text-align: center;
+}
