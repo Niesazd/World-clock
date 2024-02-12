@@ -24,12 +24,36 @@ function changeTheme() {
   }
 }
 
-function currentTimeRow1(response) {
-  let currentTime = document.querySelector("#time-row-1");
-  let currentTimeData = new Date().toLocaleTimeString("en-US", {
+function currentTimeCol1(response) {
+  let currentTimeUS = document.querySelector("#time-row-1");
+  let currentTimeFR = document.querySelector("#time-row-2");
+  let currentTimeJP = document.querySelector("#time-row-3");
+  let currentTimeAU = document.querySelector("#time-row-4");
+
+  let currentDateUS = document.querySelector("#date-row-1");
+  let currentDateUSData = new Date().toDateString("en-US", {
     timeZone: "America/Los_Angeles",
   });
-  currentTime.innerHTML = currentTimeData;
+ 
+  currentDateUS.innerHTML  = currentDateUSData
+
+  let currentTimeUSData = new Date().toLocaleTimeString("en-US", {
+    timeZone: "America/Los_Angeles"
+  });
+  let currentTimeFRData = new Date().toLocaleTimeString("en-US", {
+    timeZone: "Europe/Paris"
+  });
+  let currentTimeJPData = new Date().toLocaleTimeString("en-US", {
+    timeZone: "Asia/Tokyo"
+  });
+  let currentTimeAUData = new Date().toLocaleTimeString("en-US", {
+    timeZone: "Australia/Sydney"
+  });
+
+  currentTimeUS.innerHTML = currentTimeUSData;
+  currentTimeFR.innerHTML = currentTimeFRData;
+  currentTimeJP.innerHTML = currentTimeJPData;
+  currentTimeAU.innerHTML = currentTimeAUData;
 }
 
-setInterval(currentTimeRow1, 1000);
+setInterval(currentTimeCol1, 1000);
