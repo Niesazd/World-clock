@@ -23,3 +23,18 @@ function changeTheme() {
 </svg> Dark mode`;
   }
 }
+
+function currentTimeRow1(response) {
+  let currentTime = document.querySelector("#time-row-1");
+  let currentTimeData = new Date().toLocaleTimeString("en-US", {
+    timeZone: "America/Los_Angeles",
+  });
+  console.log(currentTimeData);
+  setInterval(time, 1000);
+  
+  function time() {
+    currentTime.innerHTML = currentTimeData;
+  }
+}
+
+currentTimeRow1();
