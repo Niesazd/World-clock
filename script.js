@@ -29,12 +29,7 @@ function currentTimeRow1(response) {
   let currentTimeData = new Date().toLocaleTimeString("en-US", {
     timeZone: "America/Los_Angeles",
   });
-  console.log(currentTimeData);
-  setInterval(time, 1000);
-  
-  function time() {
-    currentTime.innerHTML = currentTimeData;
-  }
+  currentTime.innerHTML = currentTimeData;
 }
 
-currentTimeRow1();
+setInterval(currentTimeRow1, 1000);
