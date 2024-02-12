@@ -1,12 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
   width: 100vw;
   height: 100vh;
   background-color: #ffb6c1;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dark-mode {
+  background-color: #1c1c1c;
 }
 .world-clock-app {
   background-color: #fff;
@@ -16,6 +20,11 @@ body {
   padding: 20px;
   border-radius: 40px;
 }
+.world-clock-app-dark {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -35,11 +44,20 @@ button {
   font-size: 12px;
   cursor: pointer;
 }
+.button-dark {
+  background-color: #c560c1;
+  color: #fff;
+}
 
 .select-location-time {
   padding: 10px;
   width: 96%;
   font-size: 16px;
+}
+.select-location-time-dark {
+  background-color: #c560c1;
+  color: #fff;
+  border: none;
 }
 
 .col-1 {
@@ -68,4 +86,8 @@ footer {
   opacity: 0.7;
   margin-top: 20px;
   text-align: center;
+}
+
+.link-dark {
+  color: #c560c1;
 }
