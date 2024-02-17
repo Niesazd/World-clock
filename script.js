@@ -25,76 +25,82 @@ function changeTheme() {
 }
 
 function currentTimeCol1(response) {
+  //Los Angeles
   let currentTimeUS = document.querySelector("#time-row-1");
-  let currentTimeFR = document.querySelector("#time-row-2");
-  let currentTimeJP = document.querySelector("#time-row-3");
-  let currentTimeAU = document.querySelector("#time-row-4");
-
-  let currentDateUS = document.querySelector("#date-row-1");
-  let currentDateFR = document.querySelector("#date-row-2");
-  let currentDateJP = document.querySelector("#date-row-3");
-  let currentDateAU = document.querySelector("#date-row-4");
-
-  let currentDateUSData = new Date().toDateString("en-US", {
-    timeZone: "America/Los_Angeles",
-  });
-  let currentDateFRData = new Date().toDateString("en-US", {
-    timeZone: "Europe/Paris",
-  });
-  let currentDateJPData = new Date().toDateString("en-US", {
-    timeZone: "Asia/Tokyo",
-  });
-  let currentDateAUData = new Date().toDateString("en-US", {
-    timeZone: "Australia/Sydney",
-  });
-
   let currentTimeUSData = new Date().toLocaleTimeString("en-US", {
     timeZone: "America/Los_Angeles",
   });
+
+  let currentDateUS = document.querySelector("#date-row-1");
+  let currentDateUSData = new Date().toDateString("en-US", {
+    timeZone: "America/Los_Angeles",
+  });
+
+  currentTimeUS.innerHTML = currentTimeUSData;
+  currentDateUS.innerHTML = currentDateUSData;
+
+  //Paris
+  let currentTimeFR = document.querySelector("#time-row-2");
   let currentTimeFRData = new Date().toLocaleTimeString("en-US", {
     timeZone: "Europe/Paris",
   });
+
+  let currentDateFR = document.querySelector("#date-row-2");
+  let currentDateFRData = new Date().toDateString("en-US", {
+    timeZone: "Europe/Paris",
+  });
+
+  currentTimeFR.innerHTML = currentTimeFRData;
+  currentDateFR.innerHTML = currentDateFRData;
+
+  //Tokyo
+  let currentTimeJP = document.querySelector("#time-row-3");
   let currentTimeJPData = new Date().toLocaleTimeString("en-US", {
     timeZone: "Asia/Tokyo",
   });
+
+  let currentDateJP = document.querySelector("#date-row-3");
+  let currentDateJPData = new Date().toDateString("en-US", {
+    timeZone: "Asia/Tokyo",
+  });
+
+  currentTimeJP.innerHTML = currentTimeJPData;
+  currentDateJP.innerHTML = currentDateJPData;
+
+  //Sydney
+  let currentTimeAU = document.querySelector("#time-row-4");
   let currentTimeAUData = new Date().toLocaleTimeString("en-US", {
     timeZone: "Australia/Sydney",
   });
 
-  currentTimeUS.innerHTML = currentTimeUSData;
-  currentTimeFR.innerHTML = currentTimeFRData;
-  currentTimeJP.innerHTML = currentTimeJPData;
-  currentTimeAU.innerHTML = currentTimeAUData;
+  let currentDateAU = document.querySelector("#date-row-4");
+  let currentDateAUData = new Date().toDateString("en-US", {
+    timeZone: "Australia/Sydney",
+  });
 
-  currentDateUS.innerHTML = currentDateUSData;
-  currentDateFR.innerHTML = currentDateFRData;
-  currentDateJP.innerHTML = currentDateJPData;
+  currentTimeAU.innerHTML = currentTimeAUData;
   currentDateAU.innerHTML = currentDateAUData;
 }
 
 setInterval(currentTimeCol1, 1000);
 
 function chooseLocation(event) {
-
   let otherLocation = document.querySelector("#select-location");
-  let text = document.querySelector(".container")
-  console.log(otherLocation.value)
+  let text = document.querySelector(".container");
+  console.log(otherLocation.value);
 
   if (otherLocation.value === "Current location") {
-text.innerHTML = "helloworld";
+    text.innerHTML = "helloworld";
   } else if (otherLocation.value === "New York") {
-    text.innerHTML = "test new york"
-  }  else if (otherLocation.value === "London") {
-    text.innerHTML = "test london"
-  } 
+    text.innerHTML = "test new york";
+  } else if (otherLocation.value === "London") {
+    text.innerHTML = "test london";
+  }
   // else {
   //   setInterval(currentTimeCol1, 1000);
   // }
-
- 
 }
 
 let locationSelect = document.querySelector("#select-location");
 
 locationSelect.addEventListener("change", chooseLocation);
-
