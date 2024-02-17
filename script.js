@@ -31,29 +31,48 @@ function currentTimeCol1(response) {
   let currentTimeAU = document.querySelector("#time-row-4");
 
   let currentDateUS = document.querySelector("#date-row-1");
+  let currentDateFR = document.querySelector("#date-row-2");
+  let currentDateJP = document.querySelector("#date-row-3");
+  let currentDateAU = document.querySelector("#date-row-4");
+
   let currentDateUSData = new Date().toDateString("en-US", {
     timeZone: "America/Los_Angeles",
   });
- 
-  currentDateUS.innerHTML  = currentDateUSData
-
+  let currentDateFRData = new Date().toDateString("en-US", {
+    timeZone: "Europe/Paris",
+  });
+  let currentDateJPData = new Date().toDateString("en-US", {
+    timeZone: "Asia/Tokyo",
+  });
+  let currentDateAUData = new Date().toDateString("en-US", {
+    timeZone: "Australia/Sydney",
+  });
+  
+  
   let currentTimeUSData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "America/Los_Angeles"
+    timeZone: "America/Los_Angeles",
   });
   let currentTimeFRData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Europe/Paris"
+    timeZone: "Europe/Paris",
   });
   let currentTimeJPData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Asia/Tokyo"
+    timeZone: "Asia/Tokyo",
   });
   let currentTimeAUData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Australia/Sydney"
+    timeZone: "Australia/Sydney",
   });
-
+  
   currentTimeUS.innerHTML = currentTimeUSData;
   currentTimeFR.innerHTML = currentTimeFRData;
   currentTimeJP.innerHTML = currentTimeJPData;
   currentTimeAU.innerHTML = currentTimeAUData;
+
+  currentDateUS.innerHTML = currentDateUSData;
+  currentDateFR.innerHTML = currentDateFRData;
+  currentDateJP.innerHTML = currentDateJPData;
+  currentDateAU.innerHTML = currentDateAUData;
 }
 
 setInterval(currentTimeCol1, 1000);
+
+let currentLocation = document.querySelector("")
