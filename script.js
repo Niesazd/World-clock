@@ -24,7 +24,7 @@ function changeTheme() {
   }
 }
 
-function currentTimeCol1(response) {
+function currentTimeCol1() {
   //Los Angeles
   let currentTimeUS = document.querySelector("#time-row-1");
   let currentTimeUSData = new Date().toLocaleTimeString("en-US", {
@@ -87,14 +87,40 @@ setInterval(currentTimeCol1, 1000);
 function chooseLocation(event) {
   let otherLocation = document.querySelector("#select-location");
   let text = document.querySelector(".container");
-  console.log(otherLocation.value);
 
+  
   if (otherLocation.value === "Current location") {
-    text.innerHTML = "helloworld";
+    let timeZone = moment.tz.guess();
+    let city = timeZone.split("/")[1].replaceAll("_", " ");
+    let time = moment.tz(timeZone).format("h:mm:ss A");
+    let date = moment.tz(timeZone).format("ddd MMM Do YYYY");
+    text.innerHTML = `<div class="col-1 row-1">
+          <div>
+            <h2>${city}</h2>
+            <p id="date-row-1">${date}</p>
+          </div>
+          <div class="current-time">${time}</div>
+        </div>`;
   } else if (otherLocation.value === "New York") {
-    text.innerHTML = "test new york";
+    time = moment.tz("America/New_York").format("h:mm:ss A");
+    date = moment.tz("America/New_York").format("ddd MMM Do YYYY");
+    text.innerHTML = `<div class="col-1 row-1">
+          <div>
+            <h2>New York US</h2>
+            <p id="date-row-1">${date}</p>
+          </div>
+          <div class="current-time">${time}</div>
+        </div>`;
   } else if (otherLocation.value === "London") {
-    text.innerHTML = "test london";
+    time = moment.tz("Europe/London").format("h:mm:ss A");
+    date = moment.tz("Europe/London").format("ddd MMM Do YYYY");
+    text.innerHTML = `<div class="col-1 row-1">
+          <div>
+            <h2>London UK</h2>
+            <p id="date-row-1">${date}</p>
+          </div>
+          <div class="current-time">${time}</div>
+        </div>`;
   }
   // else {
   //   setInterval(currentTimeCol1, 1000);
