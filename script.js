@@ -47,8 +47,7 @@ function currentTimeCol1(response) {
   let currentDateAUData = new Date().toDateString("en-US", {
     timeZone: "Australia/Sydney",
   });
-  
-  
+
   let currentTimeUSData = new Date().toLocaleTimeString("en-US", {
     timeZone: "America/Los_Angeles",
   });
@@ -61,7 +60,7 @@ function currentTimeCol1(response) {
   let currentTimeAUData = new Date().toLocaleTimeString("en-US", {
     timeZone: "Australia/Sydney",
   });
-  
+
   currentTimeUS.innerHTML = currentTimeUSData;
   currentTimeFR.innerHTML = currentTimeFRData;
   currentTimeJP.innerHTML = currentTimeJPData;
@@ -75,4 +74,27 @@ function currentTimeCol1(response) {
 
 setInterval(currentTimeCol1, 1000);
 
-let currentLocation = document.querySelector("")
+function chooseLocation(event) {
+
+  let otherLocation = document.querySelector("#select-location");
+  let text = document.querySelector(".container")
+  console.log(otherLocation.value)
+
+  if (otherLocation.value === "Current location") {
+text.innerHTML = "helloworld";
+  } else if (otherLocation.value === "New York") {
+    text.innerHTML = "test new york"
+  }  else if (otherLocation.value === "London") {
+    text.innerHTML = "test london"
+  } 
+  // else {
+  //   setInterval(currentTimeCol1, 1000);
+  // }
+
+ 
+}
+
+let locationSelect = document.querySelector("#select-location");
+
+locationSelect.addEventListener("change", chooseLocation);
+
