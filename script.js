@@ -92,7 +92,7 @@ function chooseLocation(event) {
     let timeZone = moment.tz.guess();
     let city = timeZone.split("/")[1].replaceAll("_", " ");
     let time = moment.tz(timeZone).format("h:mm:ss A");
-    let date = moment.tz(timeZone).format("ddd MMM Do YYYY");
+    let date = moment.tz(timeZone).format("MMMM Do YYYY");
     text.innerHTML = `<div class="col-1 row-1">
           <div>
             <h2>${city}</h2>
@@ -102,7 +102,7 @@ function chooseLocation(event) {
         </div>`;
   } else if (otherLocation.value === "New York") {
     time = moment.tz("America/New_York").format("h:mm:ss A");
-    date = moment.tz("America/New_York").format("ddd MMM Do YYYY");
+    date = moment.tz("America/New_York").format("MMMM Do YYYY");
     text.innerHTML = `<div class="col-1 row-1">
           <div>
             <h2>New York US</h2>
@@ -112,7 +112,7 @@ function chooseLocation(event) {
         </div>`;
   } else if (otherLocation.value === "London") {
     time = moment.tz("Europe/London").format("h:mm:ss A");
-    date = moment.tz("Europe/London").format("ddd MMM Do YYYY");
+    date = moment.tz("Europe/London").format("MMMM Do YYYY");
     text.innerHTML = `<div class="col-1 row-1">
           <div>
             <h2>London UK</h2>
