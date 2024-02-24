@@ -27,56 +27,42 @@ function changeTheme() {
 function currentTimeCol1() {
   //Los Angeles
   let currentTimeUS = document.querySelector("#time-row-1");
-  let currentTimeUSData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "America/Los_Angeles",
-  });
+  let currentTimeUSData = moment.tz("America/Los_Angeles").format("h:mm:ss A");
 
   let currentDateUS = document.querySelector("#date-row-1");
-  let currentDateUSData = new Date().toDateString("en-US", {
-    timeZone: "America/Los_Angeles",
-  });
+  let currentDateUSData = moment
+    .tz("America/Los_Angeles")
+    .format("MMMM Do YYYY");
 
   currentTimeUS.innerHTML = currentTimeUSData;
   currentDateUS.innerHTML = currentDateUSData;
 
   //Paris
   let currentTimeFR = document.querySelector("#time-row-2");
-  let currentTimeFRData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Europe/Paris",
-  });
+  let currentTimeFRData = moment.tz("Europe/Paris").format("h:mm:ss A");
 
   let currentDateFR = document.querySelector("#date-row-2");
-  let currentDateFRData = new Date().toDateString("en-US", {
-    timeZone: "Europe/Paris",
-  });
+  let currentDateFRData = moment.tz("Europe/Paris").format("MMMM Do YYYY");
 
   currentTimeFR.innerHTML = currentTimeFRData;
   currentDateFR.innerHTML = currentDateFRData;
 
   //Tokyo
   let currentTimeJP = document.querySelector("#time-row-3");
-  let currentTimeJPData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Asia/Tokyo",
-  });
+  let currentTimeJPData = moment.tz("Asia/Tokyo").format("h:mm:ss A");
 
   let currentDateJP = document.querySelector("#date-row-3");
-  let currentDateJPData = new Date().toDateString("en-US", {
-    timeZone: "Asia/Tokyo",
-  });
+  let currentDateJPData = moment.tz("Asia/Tokyo").format("MMMM Do YYYY");
 
   currentTimeJP.innerHTML = currentTimeJPData;
   currentDateJP.innerHTML = currentDateJPData;
 
   //Sydney
   let currentTimeAU = document.querySelector("#time-row-4");
-  let currentTimeAUData = new Date().toLocaleTimeString("en-US", {
-    timeZone: "Australia/Sydney",
-  });
+  let currentTimeAUData = moment.tz("Australia/Sydney").format("h:mm:ss A");
 
   let currentDateAU = document.querySelector("#date-row-4");
-  let currentDateAUData = new Date().toDateString("en-US", {
-    timeZone: "Australia/Sydney",
-  });
+  let currentDateAUData = moment.tz("Australia/Sydney").format("MMMM Do YYYY");
 
   currentTimeAU.innerHTML = currentTimeAUData;
   currentDateAU.innerHTML = currentDateAUData;
