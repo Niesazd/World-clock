@@ -91,3 +91,27 @@ footer {
 .link-dark {
   color: #c560c1;
 }
+
+@media (max-width:576px) {
+  h1 {
+    font-size: 28px;
+  }
+  .bi-globe {
+    width:24px;
+    height:24px;
+  }
+  button {
+    font-size: 10px;
+  }
+  .select-location-time {
+    
+    font-size: 16px;
+  }
+  .col-1 h2 {
+    font-size: 20px;
+  }
+  .current-time {
+    font-size: 24px;
+   
+  }
+}

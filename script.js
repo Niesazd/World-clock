@@ -88,7 +88,6 @@ function chooseLocation(event) {
   let otherLocation = document.querySelector("#select-location");
   let text = document.querySelector(".container");
 
-  
   if (otherLocation.value === "Current location") {
     let timeZone = moment.tz.guess();
     let city = timeZone.split("/")[1].replaceAll("_", " ");
